@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fish Weight</title>
+</head>
+
+<body>
+    <div>
+        <h3>Predict Fish Weight:</h3>
+        <form method="POST" action="{{url_for('predict')}}">
+            <label for="species">Species:</label>
+            <input type="text" name="species" id="species" required /><br />
+            <label for="species">Height:</label>
+            <input type="number" name="height" id="height" min="0" step=".01" required /><br />
+            <label for="species">Width:</label>
+            <input type="number" name="width" id="width" min="0" step=".01" required /><br />
+            <label for="species">Length1:</label>
+            <input type="number" name="length1" id="length1" min="0" step=".01" required /><br />
+            <label for="species">Length2:</label>
+            <input type="number" name="length2" id="length2" min="0" step=".01" required /><br />
+            <label for="species">Length3:</label>
+            <input type="number" name="length3" id="length3" min="0" step=".01" required /><br />
+            <input type="submit" value="Predict" /><br />
+        </form>
+        {% if prediction is defined %}
+        <p>prediction: {{prediction}}</p>
+        {% endif %}
+    </div>
+    <div>
+        <h3>Add a sample to dataset:</h3>
+        <form method="POST" action="{{url_for('add')}}">
+            <label for="species">Species:</label>
+            <input type="text" name="species" id="species" required /><br />
+            <label for="species">Height:</label>
+            <input type="number" name="height" id="height" min="0" step=".01" required /><br />
+            <label for="species">Width:</label>
+            <input type="number" name="width" id="width" min="0" step=".01" required /><br />
+            <label for="species">Length1:</label>
+            <input type="number" name="length1" id="length1" min="0" step=".01" required /><br />
+            <label for="species">Length2:</label>
+            <input type="number" name="length2" id="length2" min="0" step=".01" required /><br />
+            <label for="species">Length3:</label>
+            <input type="number" name="length3" id="length3" min="0" step=".01" required /><br />
+            <label for="species">Weight:</label>
+            <input type="number" name="weight" id="weight" min="0" step=".01" required /><br />
+            <input type="submit" value="Add" /><br />
+        </form>
+    </div>
+    <div>
+        <h3>Retrain Model:</h3>
+        <form method="post" action="{{url_for('retrain')}}">
+            <input type="submit" value="Retrain Model" />
+        </form>
+    </div>
+</body>
+
+</html>
