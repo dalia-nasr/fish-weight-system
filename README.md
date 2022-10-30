@@ -26,5 +26,5 @@ The system was deployed on Heroku cloud provider: ```https://fishweightsystem.he
 - ``` /add ```: This route receives the required 7 parameters with the fish weight and adds rhem to the dataset.
 - ``` /retrain ```: This route retrains the fish weight prediction model.
 
-* The required parameters to predict the accurate fish weight are:
+The required parameters to predict the accurate fish weight are:
 species, vertical_length, diagonal_length,  cross_length, height, width
